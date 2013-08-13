@@ -1,0 +1,41 @@
+#########################
+#
+#  p o i n t v i w e r
+#
+#########################
+
+## Initalise Autoconf...
+
+AC_INIT(README)
+AC_CANONICAL_HOST
+AC_CANONICAL_TARGET
+AC_PROG_MAKE_SET
+AC_PROG_CXX
+AC_PROG_INSTALL
+
+## Initialise Automake...
+## NOTE: use config.h option to improve passing of -D flags
+
+AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE(pointviewer, 2.0.1)
+
+## Check for SDL and OpenGL (our only dependencies)...
+## NOTE: our acompanying acinclude.m4 has definitions for these checks...
+
+AM_PATH_SDL(1.2.0,,AC_MSG_ERROR([*** SDL >= 1.2.0 not installed - please install first ***]))
+AX_CHECK_GL
+
+## Optimise for linux...
+
+case "$target" in
+  alpha*-*-linux*)
+    CXXFLAGS="$CXXFLAGS -mcpu=ev4 -Wa,-mall"
+  ;;
+esac
+
+## Finally, assemble all definitions and generate Makefile...
+
+CXXFLAGS="$CXXFLAGS $SDL_CFLAGS $GL_CFLAGS"
+LIBS="$LIBS $SDL_LIBS $GL_LIBS"
+
+AC_OUTPUT(Makefile)
