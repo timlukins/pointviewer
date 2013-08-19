@@ -9,8 +9,8 @@
 #ifndef __PV_CONTROL__
 #define __PV_CONTROL__
 
-// The one place we use a define for version
-#define PV_TITLE ". . . p o i n t v i e w e r . . . v. 2.0.1"
+// The one place we use a define for version?
+#define PV_TITLE ". . . p o i n t v i e w e r . . ."
 //#define PV_COPYR "(c) 2005 IPAB Research, University of Edinburgh."
 
 #include <vector>
