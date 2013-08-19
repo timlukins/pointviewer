@@ -1,0 +1,8 @@
+
+In case ever to do this again, how to reset the automake toolchain... 
+
+brew install aclocal automake and libtool
+create configure.ac
+create Makefile.am
+add the m4 directory containing the macros for sdl and opengl
+aclocal && automake --gnu --add-missing && autoconf

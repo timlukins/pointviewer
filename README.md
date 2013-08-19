@@ -1,11 +1,23 @@
 pointviewer
 ===========
 
-A 4D ([x,y,z] + temporal) point cloud visualisation tool.
+A 4D ([x,y,z] + temporal) point cloud tool.
+
+Not intended as an editing tool - purely for quick visualisation.
+
+Features:
+
+* Loads ascii XYZ (with or without colour).
+* Loads PointViewModel PVM files built with PVMC tool, in turn can read:
+	- Floating point TIFF with colour imagery
+	- C3D format
+* Display either *spatially* or *temporally* (e.g all points - or play back)
+* Show axis.
+* Center on axis.
+* Normalise points.
+* Make points larger/smaller.
 
 Implemented with [OpenGL](http://www.opengl.org) and [SDL](http://www.libsdl.org).
-
-Features
 
 
 Install
@@ -48,9 +60,11 @@ TODO:
 Where to start?
 
 * Linux and Windows confirmation.
-* More/robust file reading.
-* Better interaction/controls. 
-* "Splatting".
+* Prebuilt dists?
+* More/robust file reading - resurrect the C3D input!
+* The Point Cloud Library came out after I wrote this - use some of it's features now...
+* Better interaction/controls - esp. playback. 
+* "Splatting" and other visualisation.
 * Massive point cloud data-sets (on the cloud?)
 * Deltas - descriping derivatives of motion and local surfaces.  
 
@@ -58,12 +72,5 @@ Where to start?
 Colophon
 --------
 
-In case ever to do this again, how to reset the automake toolchain... 
+This was a handy wee tool developed during my PhD - [Qualifying 4D Deforming Surfaces by Registered Differential Features](https://www.era.lib.ed.ac.uk/handle/1842/2830). Thanks must go to Craig for the original pointviewer concept.
 
-```
-brew install aclocal automake and libtool
-create configure.ac
-create Makefile.am
-add the m4 directory containing the macros for sdl and opengl
-aclocal && automake --gnu --add-missing && autoconf
-```
