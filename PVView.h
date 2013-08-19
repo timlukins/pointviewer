@@ -12,7 +12,15 @@
 #ifdef _WIN32
 #include <windows.h>		// Need this first for OpenGL support on Window$
 #endif
-#include <GL/glu.h>
+
+#ifdef HAVE_GL_GL_H
+# include <GL/gl.h>
+#elif defined(HAVE_OPENGL_GL_H)
+# include <OpenGL/gl.h>
+#else
+# error no gl.h
+#endif
+
 #include <string>
 using namespace std;
 
