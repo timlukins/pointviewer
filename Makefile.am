@@ -4,19 +4,7 @@
 #
 ##########################
 
-# Distribution definition
-
-EXTRA_DIST = \
-      autogen.sh                \
-      Pointviewer.dsp           \
-      Pointviewer.dsw           \
-      icon.ico                  \
-      icon.rc                   \
-      pointviewer.dox           \
-      pointviewer.html          \
-      pointviewer.css           \
-      pointviewer.png           \
-      bcpp.cfg                  \
+ACLOCAL_AMFLAGS = -I m4
 
 bin_PROGRAMS = pv
 
