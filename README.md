@@ -15,13 +15,30 @@ Features:
 * Normalise points.
 * Make points larger/smaller.
 
-Implemented with [OpenGL](http://www.opengl.org) and [SDL](http://www.libsdl.org).
+
+Controls:
+
+* _ESC_ - quit
+* _a_ - display axis
+* _z_ - shrink point size
+* _x_ - increase point size
+* _n_ - step forward next frame
+* _b_ - step backwards last frame
+* _m_ - toggle mode spatial (all points) or temporal (per frame)
+* _,_ - zoom in
+* _._ - zoom out
+* _c_ - center axis on centroid of points
+* _s_ - scale normalise all points 
 
 
 Install
 -------
 
+Implemented with [OpenGL](http://www.opengl.org) and [SDL](http://www.libsdl.org).
+
 This version tested on MacOS and Linux. It needs automake version >=1.13.
+
+OpenGL usually standard on modern machines.
 
 Resolve SDL dependencies - e.g. via brew:
 
@@ -59,6 +76,7 @@ make install
 
 You can use the `--prefix=/usr/local/bin` or similar when running `./configure` to change the install location.
 
+Any problems, you may wish to `bootstrap` the automake environment with the script of that name.
 
 TODO:
 ----
