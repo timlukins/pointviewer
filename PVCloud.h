@@ -13,6 +13,8 @@
 #include <iostream>
 #include <map>
 #include <cstring>
+#include <climits>
+#include <cstdlib>
 using namespace std;
 
 #include "PVPoint.h"
