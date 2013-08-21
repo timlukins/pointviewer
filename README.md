@@ -1,9 +1,7 @@
 pointviewer
 ===========
 
-A 4D ([x,y,z] + temporal) point cloud tool.
-
-Not intended as an editing tool - purely for quick visualisation.
+A 4D ([x,y,z] + time) point cloud visualisation tool.
 
 Features:
 
@@ -23,12 +21,18 @@ Implemented with [OpenGL](http://www.opengl.org) and [SDL](http://www.libsdl.org
 Install
 -------
 
-This version tested on MacOS (it used to work on Linux just fine...)
+This version tested on MacOS and Linux. It needs automake version >=1.13.
 
-Resolve dependencies - e.g. via brew:
+Resolve SDL dependencies - e.g. via brew:
 
 ```
 brew install sdl
+```
+
+Or, with some Linux package manager - e.g. debian/ubuntu apt-get:
+
+```
+apt-get install libsdl1.2-dev
 ```
 
 Then configure:
@@ -45,7 +49,9 @@ Then to build:
 make 
 ```
 
-Followed by the following (if you have permission to install):
+The resulting `pv` executable can be run.
+
+Or (if you have permission to install):
 
 ```
 make install
@@ -59,7 +65,7 @@ TODO:
 
 Where to start?
 
-* Linux and Windows confirmation.
+* Windows confirmation.
 * Prebuilt dists?
 * More/robust file reading - resurrect the C3D input!
 * The Point Cloud Library came out after I wrote this - use some of it's features now...
